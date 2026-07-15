@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Private Birthday Experience</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Cormorant+Garamond:wght@500;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/animations.css">
+<link rel="stylesheet" href="css/responsive.css">
+
+</head>
+
+<body>
+
+<!-- ================= LOADING SCREEN ================= -->
+
+<div id="loader">
+
+    <div class="loader-box">
+
+        <h1>Private Birthday Experience</h1>
+
+        <div class="loading-text">
+
+            <span>Connecting...</span>
+            <span>Authenticating...</span>
+            <span>Loading Memories...</span>
+
+        </div>
+
+        <div class="progress">
+
+            <div class="progress-bar"></div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ================= BACKGROUND VIDEO ================= -->
+
+<video
+id="background-video"
+autoplay
+muted
+loop
+playsinline>
+
+<source src="assets/video/background.mp4" type="video/mp4">
+
+</video>
+
+<div class="video-overlay"></div>
+
+<div id="particles"></div>
+
+<div id="cursor-glow"></div>
+
+<!-- ================= CAPTCHA ================= -->
+
+<section id="verification">
+
+<div class="glass-card">
+
+<p class="small-title">
+
+PRIVATE ACCESS
+
+</p>
+
+<h1>
+
+Birthday Experience
+
+</h1>
+
+<p class="description">
+
+This page is protected.
+
+Please verify your identity
+before continuing.
+
+</p>
+
+<button id="verifyButton">
+
+Begin Verification
+
+</button>
+
+</div>
+
+</section>
+
+<!-- ================= PUZZLE (hidden for now) ================= -->
+
+<section id="puzzle-screen" class="hidden">
+
+<div class="glass-card">
+
+<h2>
+
+Verification Required
+
+</h2>
+
+<p>
+
+Complete the puzzle to continue.
+
+</p>
+
+<div class="puzzle-placeholder">
+
+<img src="assets/images/puzzle.jpg">
+
+</div>
+
+<button id="unlockButton">
+
+Complete Verification
+
+</button>
+
+</div>
+
+</section>
+
+<!-- ================= MAIN WEBSITE ================= -->
+
+<main id="main-content" class="hidden">
+
+<section class="hero">
+
+
+<div class="hero-content">
+
+
+<p class="hero-small">
+
+A SPECIAL MESSAGE FOR YOU
+
+</p>
+
+
+<h1 id="hero-title">
+
+<span class="word">
+Happy
+</span>
+
+<span class="word">
+Birthday
+</span>
+
+
+<span class="name">
+LeBron James ❤️
+</span>
+
+
+</h1>
+
+
+<p class="hero-text">
+
+Today is all about you.
+
+A small place filled with memories,
+
+love and surprises.
+
+</p>
+
+
+<a href="#story" class="hero-button">
+
+Begin the Journey
+
+</a>
+
+
+</div>
+
+
+</section>
+
+<section id="story">
+
+<div class="section-placeholder">
+
+<section id="story">
+
+
+<div class="story-container">
+
+
+<div class="section-title">
+
+
+<p class="small-title">
+
+OUR JOURNEY
+
+</p>
+
+
+<h2>
+
+Our Story ❤️
+
+</h2>
+
+
+<p>
+
+Every moment with you becomes a memory worth keeping.
+
+</p>
+
+
+</div>
+
+
+
+<div class="timeline">
+
+
+
+<div class="memory-card">
+
+
+<div class="memory-image">
+
+<img src="assets/images/memory1.jpg">
+
+</div>
+
+
+<div class="memory-content">
+
+<span>
+
+Chapter 01
+
+</span>
+
+
+<h3>
+
+The Beginning
+
+</h3>
+
+
+<p>
+
+The moment everything started.
+A small moment that became something unforgettable.
+
+</p>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+<div class="memory-card">
+
+
+<div class="memory-image">
+
+<img src="assets/images/memory2.jpg">
+
+</div>
+
+
+<div class="memory-content">
+
+
+<span>
+
+Chapter 02
+
+</span>
+
+
+<h3>
+
+Beautiful Moments
+
+</h3>
+
+
+<p>
+
+Every laugh, every conversation,
+every memory made together.
+
+</p>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+<div class="memory-card">
+
+
+<div class="memory-image">
+
+<img src="assets/images/memory3.jpg">
+
+</div>
+
+
+<div class="memory-content">
+
+
+<span>
+
+Chapter 03
+
+</span>
+
+
+<h3>
+
+Forever
+
+</h3>
+
+
+<p>
+
+The story is still being written...
+
+</p>
+
+
+</div>
+
+
+</div>
+
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+<section id="gallery">
+
+<div class="section-placeholder">
+
+<h2>
+
+Gallery
+
+</h2>
+
+<p>
+
+Coming Soon...
+
+</p>
+
+</div>
+
+</section>
+
+<section id="letter">
+
+<div class="section-placeholder">
+
+<h2>
+
+Letter
+
+</h2>
+
+<p>
+
+Coming Soon...
+
+</p>
+
+</div>
+
+</section>
+
+<section id="gift">
+
+<div class="section-placeholder">
+
+<h2>
+
+Gift
+
+</h2>
+
+<p>
+
+Coming Soon...
+
+</p>
+
+</div>
+
+</section>
+
+</main>
+
+<!-- ================= MUSIC PLAYER ================= -->
+
+<div id="music-player">
+
+
+<div class="record-player">
+
+
+<div class="tone-arm"></div>
+
+
+<div class="vinyl">
+
+
+<div class="vinyl-label">
+
+❤️
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+
+<div class="music-info">
+
+
+<h4>
+
+NOW PLAYING
+
+</h4>
+
+
+<p>
+
+Our Special Song
+
+</p>
+
+
+<div class="equalizer">
+
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+
+</div>
+
+
+</div>
+
+
+</div>
+
+<audio id="music" loop>
+
+<source src="assets/music/song.mp3" type="audio/mpeg">
+
+</audio>
+
+<!-- ================= SCRIPTS ================= -->
+
+<script src="js/main.js"></script>
+<script src="js/music.js"></script>
+<script src="js/confetti.js"></script>
+
+</body>
+
+</html>

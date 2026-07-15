@@ -1,0 +1,1632 @@
+/* =====================================================
+   PRIVATE BIRTHDAY EXPERIENCE
+   STYLE.CSS
+===================================================== */
+
+:root{
+
+    --bg:#090909;
+    --bg-light:#131313;
+
+    --white:#ffffff;
+
+    --text:#d7d7d7;
+
+    --gold:#E7C76A;
+
+    --pink:#ff4f9b;
+
+    --glass:rgba(255,255,255,.08);
+
+    --glass-border:rgba(255,255,255,.15);
+
+    --shadow:0 30px 60px rgba(0,0,0,.45);
+
+    --radius:28px;
+
+    --transition:.45s;
+
+}
+
+/* =====================================================
+RESET
+===================================================== */
+
+*{
+
+margin:0;
+padding:0;
+box-sizing:border-box;
+
+}
+
+html{
+
+scroll-behavior:smooth;
+
+}
+
+body{
+
+background:var(--bg);
+
+color:white;
+
+font-family:"Poppins",sans-serif;
+
+overflow-x:hidden;
+
+min-height:100vh;
+
+}
+
+/* =====================================================
+BACKGROUND VIDEO
+===================================================== */
+
+#background-video{
+
+position:fixed;
+
+top:0;
+left:0;
+
+width:100%;
+height:100%;
+
+object-fit:cover;
+
+z-index:-5;
+
+filter:
+
+brightness(.22)
+
+blur(2px)
+
+saturate(1.2);
+
+transform:scale(1.05);
+
+}
+
+/* =====================================================
+VIDEO OVERLAY
+===================================================== */
+
+.video-overlay{
+
+position:fixed;
+
+inset:0;
+
+background:
+
+linear-gradient(
+
+180deg,
+
+rgba(0,0,0,.15),
+
+rgba(0,0,0,.55),
+
+rgba(0,0,0,.85)
+
+);
+
+z-index:-4;
+
+}
+
+/* =====================================================
+PARTICLES
+===================================================== */
+
+#particles{
+
+position:fixed;
+
+inset:0;
+
+pointer-events:none;
+
+z-index:-3;
+
+overflow:hidden;
+
+}
+
+.particle{
+
+position:absolute;
+
+width:4px;
+height:4px;
+
+border-radius:50%;
+
+background:white;
+
+opacity:.25;
+
+animation:floatParticle linear infinite;
+
+}
+
+/* =====================================================
+CURSOR GLOW
+===================================================== */
+
+#cursor-glow{
+
+position:fixed;
+
+width:420px;
+height:420px;
+
+border-radius:50%;
+
+background:
+
+radial-gradient(circle,
+
+rgba(255,215,120,.15),
+
+transparent 70%
+
+);
+
+pointer-events:none;
+
+transform:translate(-50%,-50%);
+
+z-index:-2;
+
+transition:
+
+transform .08s linear;
+
+}
+
+/* =====================================================
+LOADER
+===================================================== */
+
+#loader{
+
+position:fixed;
+
+inset:0;
+
+background:#050505;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+z-index:99999;
+
+transition:1s;
+
+}
+
+.loader-box{
+
+width:min(500px,90vw);
+
+text-align:center;
+
+}
+
+.loader-box h1{
+
+font-family:"Cormorant Garamond",serif;
+
+font-size:3rem;
+
+font-weight:700;
+
+margin-bottom:35px;
+
+color:white;
+
+letter-spacing:2px;
+
+}
+
+.loading-text{
+
+display:flex;
+
+flex-direction:column;
+
+gap:12px;
+
+margin-bottom:35px;
+
+color:#c9c9c9;
+
+font-size:.95rem;
+
+letter-spacing:3px;
+
+text-transform:uppercase;
+
+}
+
+.progress{
+
+width:100%;
+
+height:5px;
+
+background:#222;
+
+border-radius:30px;
+
+overflow:hidden;
+
+}
+
+.progress-bar{
+
+height:100%;
+
+width:0;
+
+background:
+
+linear-gradient(
+
+90deg,
+
+#d4af37,
+
+#ffe38f,
+
+#d4af37
+
+);
+
+animation:loading 4s forwards;
+
+}
+
+/* =====================================================
+SECTIONS
+===================================================== */
+
+section{
+
+min-height:100vh;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+padding:100px 8%;
+
+position:relative;
+
+}
+
+/* =====================================================
+GLASS CARD
+===================================================== */
+
+.glass-card{
+
+width:min(650px,90vw);
+
+padding:70px;
+
+border-radius:var(--radius);
+
+background:var(--glass);
+
+border:1px solid var(--glass-border);
+
+backdrop-filter:blur(18px);
+
+box-shadow:var(--shadow);
+
+text-align:center;
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+.glass-card::before{
+
+content:"";
+
+position:absolute;
+
+top:-150px;
+
+left:-150px;
+
+width:300px;
+height:300px;
+
+border-radius:50%;
+
+background:
+
+radial-gradient(circle,
+
+rgba(255,255,255,.18),
+
+transparent 70%
+
+);
+
+}
+
+/* =====================================================
+TYPOGRAPHY
+===================================================== */
+
+.small-title{
+
+font-size:.85rem;
+
+letter-spacing:5px;
+
+color:var(--gold);
+
+margin-bottom:20px;
+
+text-transform:uppercase;
+
+}
+
+.glass-card h1{
+
+font-family:"Cormorant Garamond",serif;
+
+font-size:4rem;
+
+margin-bottom:25px;
+
+}
+
+.glass-card h2{
+
+font-family:"Cormorant Garamond",serif;
+
+font-size:3rem;
+
+margin-bottom:20px;
+
+}
+
+.description{
+
+color:var(--text);
+
+font-size:1.1rem;
+
+line-height:1.9;
+
+margin-bottom:40px;
+
+}
+/* =====================================================
+BUTTONS
+===================================================== */
+
+button,
+.hero-button{
+
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+
+    padding:18px 42px;
+
+    border:none;
+    outline:none;
+
+    border-radius:999px;
+
+    cursor:pointer;
+
+    text-decoration:none;
+
+    font-weight:600;
+
+    font-size:1rem;
+
+    color:white;
+
+    background:
+    linear-gradient(
+        135deg,
+        #e8c66a,
+        #c89b3c
+    );
+
+    transition:all .35s ease;
+
+    box-shadow:
+        0 10px 35px rgba(232,198,106,.25);
+
+}
+
+button:hover,
+.hero-button:hover{
+
+    transform:
+        translateY(-4px)
+        scale(1.03);
+
+    box-shadow:
+        0 18px 45px rgba(232,198,106,.45);
+
+}
+
+button:active,
+.hero-button:active{
+
+    transform:scale(.98);
+
+}
+
+/* =====================================================
+VERIFICATION
+===================================================== */
+
+#verification{
+
+    position:relative;
+
+    z-index:20;
+
+}
+
+#verification h1{
+
+    margin-bottom:20px;
+
+}
+
+#verification .description{
+
+    max-width:480px;
+
+    margin:0 auto 40px;
+
+}
+
+/* =====================================================
+PUZZLE
+===================================================== */
+
+.hidden{
+
+    display:none;
+
+}
+
+#puzzle-screen{
+
+    position:relative;
+
+    z-index:20;
+
+}
+
+.puzzle-placeholder{
+
+    width:420px;
+    max-width:100%;
+
+    margin:35px auto;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    border:1px solid rgba(255,255,255,.1);
+
+    box-shadow:0 20px 60px rgba(0,0,0,.45);
+
+}
+
+.puzzle-placeholder img{
+
+    display:block;
+
+    width:100%;
+
+}
+
+/* =====================================================
+MAIN CONTENT
+===================================================== */
+
+#main-content{
+
+    width:100%;
+
+}
+
+/* =====================================================
+HERO
+===================================================== */
+
+.hero{
+
+    flex-direction:column;
+
+    text-align:center;
+
+}
+
+.hero h1{
+
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:clamp(4rem,8vw,7rem);
+
+    line-height:1;
+
+    margin-bottom:30px;
+
+}
+
+.hero span{
+
+    display:block;
+
+    margin-top:20px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #fff,
+            #e8c66a,
+            #ffffff
+        );
+
+    -webkit-background-clip:text;
+
+    color:transparent;
+
+}
+
+.hero p{
+
+    width:min(700px,90vw);
+
+    color:var(--text);
+
+    line-height:2;
+
+    font-size:1.15rem;
+
+    margin-bottom:50px;
+
+}
+
+.hero-button{
+
+    font-size:1.05rem;
+
+}
+
+/* =====================================================
+PLACEHOLDER SECTIONS
+===================================================== */
+
+.section-placeholder{
+
+    width:min(900px,90vw);
+
+    padding:80px;
+
+    border-radius:30px;
+
+    backdrop-filter:blur(18px);
+
+    background:rgba(255,255,255,.05);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    text-align:center;
+
+}
+
+.section-placeholder h2{
+
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:3rem;
+
+    margin-bottom:25px;
+
+}
+
+.section-placeholder p{
+
+    color:var(--text);
+
+    font-size:1.1rem;
+
+}
+
+/* =====================================================
+MUSIC PLAYER
+===================================================== */
+
+#music-player{
+
+    position:fixed;
+
+    right:35px;
+
+    bottom:35px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+    padding:16px 22px;
+
+    border-radius:999px;
+
+    background:rgba(20,20,20,.75);
+
+    backdrop-filter:blur(25px);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    box-shadow:0 20px 60px rgba(0,0,0,.35);
+
+    z-index:999;
+
+}
+
+.vinyl{
+
+    width:78px;
+    height:78px;
+
+    border-radius:50%;
+
+    overflow:hidden;
+
+    animation:spin 6s linear infinite;
+
+    animation-play-state:paused;
+
+}
+
+.vinyl img{
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+}
+
+.music-info h4{
+
+    font-size:.8rem;
+
+    color:#999;
+
+    letter-spacing:2px;
+
+    text-transform:uppercase;
+
+    margin-bottom:6px;
+
+}
+
+.music-info p{
+
+    color:white;
+
+    font-size:.95rem;
+
+}
+
+/* =====================================================
+SOFT LIGHTS
+===================================================== */
+
+body::before{
+
+    content:"";
+
+    position:fixed;
+
+    top:-250px;
+    left:-250px;
+
+    width:550px;
+    height:550px;
+
+    border-radius:50%;
+
+    background:
+
+    radial-gradient(
+
+        circle,
+
+        rgba(232,198,106,.12),
+
+        transparent 70%
+
+    );
+
+    z-index:-4;
+
+}
+
+body::after{
+
+    content:"";
+
+    position:fixed;
+
+    bottom:-220px;
+    right:-220px;
+
+    width:520px;
+    height:520px;
+
+    border-radius:50%;
+
+    background:
+
+    radial-gradient(
+
+        circle,
+
+        rgba(255,100,180,.08),
+
+        transparent 70%
+
+    );
+
+    z-index:-4;
+
+}
+
+/* =====================================================
+SCROLLBAR
+===================================================== */
+
+::-webkit-scrollbar{
+
+    width:12px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#101010;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#3a3a3a;
+
+    border-radius:20px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:#666;
+
+}
+.vinyl{
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.vinyl:hover{
+
+    transform:scale(1.05);
+
+}
+/* ======================================
+CONFETTI CANVAS
+====================================== */
+
+
+#confetti-canvas{
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    z-index:9999;
+
+}
+/* ======================================
+CINEMATIC HERO
+====================================== */
+
+
+.hero{
+
+    position:relative;
+
+    text-align:center;
+
+}
+
+
+.hero-content{
+
+    opacity:0;
+
+    transform:
+
+    translateY(50px);
+
+}
+
+
+.hero.active .hero-content{
+
+
+    animation:
+
+    heroEnter
+
+    2s
+
+    ease
+
+    forwards;
+
+
+}
+
+
+
+.hero-small{
+
+
+    color:var(--gold);
+
+    letter-spacing:6px;
+
+    font-size:.8rem;
+
+    margin-bottom:35px;
+
+    text-transform:uppercase;
+
+
+}
+
+
+
+#hero-title{
+
+
+    font-family:
+
+    "Cormorant Garamond",
+    serif;
+
+
+    font-size:
+
+    clamp(4rem,8vw,7rem);
+
+
+    line-height:1;
+
+
+}
+
+
+
+.word{
+
+
+    display:inline-block;
+
+    opacity:0;
+
+    transform:
+
+    translateY(40px);
+
+
+}
+
+
+.hero.active .word{
+
+
+    animation:
+
+    wordReveal
+
+    1s
+
+    forwards;
+
+
+}
+
+
+
+.hero.active .word:nth-child(1){
+
+    animation-delay:.3s;
+
+}
+
+
+.hero.active .word:nth-child(2){
+
+    animation-delay:.8s;
+
+}
+
+
+
+.name{
+
+
+    display:block;
+
+    margin-top:30px;
+
+
+    background:
+
+    linear-gradient(
+
+    90deg,
+
+    white,
+
+    var(--gold),
+
+    white
+
+    );
+
+
+    -webkit-background-clip:text;
+
+    color:transparent;
+
+
+    opacity:0;
+
+}
+
+
+
+.hero.active .name{
+
+
+    animation:
+
+    nameReveal
+
+    2s
+
+    forwards;
+
+
+    animation-delay:1.5s;
+
+
+}
+
+
+
+.hero-text{
+
+
+    max-width:650px;
+
+    margin:40px auto;
+
+
+    opacity:0;
+
+}
+
+
+.hero.active .hero-text{
+
+
+    animation:
+
+    fadeUp
+
+    1.5s
+
+    forwards;
+
+
+    animation-delay:2.3s;
+
+
+}
+
+/* =====================================
+VINYL PLAYER PREMIUM
+===================================== */
+
+
+#music-player{
+
+    gap:25px;
+
+}
+
+
+
+.record-player{
+
+    position:relative;
+
+    width:90px;
+
+    height:90px;
+
+}
+
+
+
+.vinyl{
+
+
+    width:90px;
+
+    height:90px;
+
+
+    border-radius:50%;
+
+
+    background:
+
+    radial-gradient(
+
+        circle,
+
+        #222 0%,
+
+        #050505 60%,
+
+        #000 100%
+
+    );
+
+
+    position:relative;
+
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+
+    border:
+
+    3px solid #111;
+
+
+    box-shadow:
+
+    inset 0 0 25px rgba(255,255,255,.15),
+
+    0 10px 30px rgba(0,0,0,.5);
+
+
+
+}
+
+
+
+.vinyl::before{
+
+
+    content:"";
+
+
+    position:absolute;
+
+
+    inset:10px;
+
+
+    border-radius:50%;
+
+
+    border:
+
+    1px solid rgba(255,255,255,.15);
+
+
+
+}
+
+
+
+
+.vinyl-label{
+
+
+    width:28px;
+
+    height:28px;
+
+
+    border-radius:50%;
+
+
+    background:
+
+    linear-gradient(
+
+    135deg,
+
+    #e8c66a,
+
+    #fff
+
+    );
+
+
+    display:flex;
+
+
+    justify-content:center;
+
+    align-items:center;
+
+
+    font-size:12px;
+
+
+}
+
+
+
+.tone-arm{
+
+
+    position:absolute;
+
+
+    width:70px;
+
+    height:6px;
+
+
+    background:#aaa;
+
+
+    right:-30px;
+
+    top:-5px;
+
+
+    transform:
+
+    rotate(-25deg);
+
+
+    transform-origin:left;
+
+
+    border-radius:10px;
+
+
+    z-index:2;
+
+
+}
+
+
+
+.tone-arm::after{
+
+
+    content:"";
+
+
+    position:absolute;
+
+
+    right:0;
+
+
+    width:14px;
+
+    height:14px;
+
+
+    background:#ddd;
+
+
+    border-radius:50%;
+
+
+
+}
+
+
+
+/* Equalizer */
+
+
+.equalizer{
+
+
+    display:flex;
+
+    gap:4px;
+
+    margin-top:8px;
+
+
+}
+
+
+
+.equalizer span{
+
+
+    width:3px;
+
+    height:12px;
+
+
+    background:
+
+    var(--gold);
+
+
+    animation:
+
+    equalize
+
+    .8s
+
+    infinite;
+
+
+}
+
+
+
+.equalizer span:nth-child(2){
+
+    animation-delay:.2s;
+
+}
+
+
+.equalizer span:nth-child(3){
+
+    animation-delay:.4s;
+
+}
+
+
+.equalizer span:nth-child(4){
+
+    animation-delay:.6s;
+
+}
+
+
+.equalizer span:nth-child(5){
+
+    animation-delay:.8s;
+
+}
+.tone-arm.playing{
+
+    animation:
+
+    armMove
+
+    1s
+
+    forwards;
+
+}
+/* =====================================
+STORY SECTION
+===================================== */
+
+
+#story{
+
+    padding-top:150px;
+
+}
+
+
+
+.story-container{
+
+    width:min(1100px,90vw);
+
+}
+
+
+
+.section-title{
+
+    text-align:center;
+
+    margin-bottom:100px;
+
+}
+
+
+
+.section-title h2{
+
+    font-family:
+
+    "Cormorant Garamond",
+    serif;
+
+
+    font-size:4rem;
+
+}
+
+
+
+.section-title p:not(.small-title){
+
+    color:var(--text);
+
+}
+
+
+
+.timeline{
+
+
+    position:relative;
+
+
+}
+
+
+
+.timeline::before{
+
+
+    content:"";
+
+
+    position:absolute;
+
+
+    left:50%;
+
+
+    top:0;
+
+
+    bottom:0;
+
+
+    width:2px;
+
+
+    background:
+
+    linear-gradient(
+
+    transparent,
+
+    var(--gold),
+
+    transparent
+
+    );
+
+
+}
+
+
+
+
+.memory-card{
+
+
+    width:48%;
+
+
+    display:flex;
+
+
+    flex-direction:column;
+
+
+    background:
+
+    rgba(255,255,255,.06);
+
+
+    border:
+
+    1px solid rgba(255,255,255,.12);
+
+
+    backdrop-filter:blur(20px);
+
+
+    border-radius:30px;
+
+
+    overflow:hidden;
+
+
+    margin-bottom:80px;
+
+
+    box-shadow:
+
+    0 30px 70px rgba(0,0,0,.35);
+
+
+    transition:.5s;
+
+
+}
+
+
+
+.memory-card:nth-child(even){
+
+    margin-left:auto;
+
+}
+
+
+
+.memory-card:hover{
+
+
+    transform:
+
+    translateY(-15px);
+
+
+}
+
+
+
+.memory-image{
+
+
+    height:300px;
+
+
+    overflow:hidden;
+
+
+}
+
+
+
+.memory-image img{
+
+
+    width:100%;
+
+
+    height:100%;
+
+
+    object-fit:cover;
+
+
+    transition:.8s;
+
+
+}
+
+
+
+.memory-card:hover img{
+
+
+    transform:
+
+    scale(1.08);
+
+
+}
+
+
+
+.memory-content{
+
+
+    padding:35px;
+
+
+}
+
+
+
+.memory-content span{
+
+
+    color:var(--gold);
+
+
+    letter-spacing:3px;
+
+
+    font-size:.8rem;
+
+
+}
+
+
+
+.memory-content h3{
+
+
+    font-family:
+
+    "Cormorant Garamond",
+    serif;
+
+
+    font-size:2.5rem;
+
+
+    margin:15px 0;
+
+
+}
+
+
+
+.memory-content p{
+
+
+    color:var(--text);
+
+
+    line-height:1.8;
+
+
+}
